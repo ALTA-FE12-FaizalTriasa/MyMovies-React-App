@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "img": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+        "title": "Stranger Things",
+        "type": "series",
+        "rilis": 2016,
+        "genre": ["Horor", "Mystery", "Drama", "Supernatural", "Exciting Story"],
+        "sinopsis": "Stranger Things berlatar pada tahun 1980-an, di kota fiksi Hawkins, Indiana. Serial ini berfokus di sekitar banyak peristiwa supernatural yang terjadi di kota, khususnya hubungan mereka dengan realitas alternatif yang disebut 'Upside Down'. Hal itu muncul karena fasilitas eksperimen anak pemerintah Amerika Serikat."
+    },
+    {
+        "id": 2,
+        "img": "https://m.media-amazon.com/images/M/MV5BODcwNWE3OTMtMDc3MS00NDFjLWE1OTAtNDU3NjgxODMxY2UyXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg",
+        "title": "One Piece",
+        "type": "Anime",
+        "rilis": 1999,
+        "genre": ["Anime", "Comedi", "Adventure", "Action", "Fantasi"],
+        "sinopsis": "ONE PIECE adalah sebuah Manga dan Anime yang menceritakan tentang petualangan sekelompok bajak laut dalam mencari harta karun legendaris, One Piece."
+    },
+    {
+        "id": 3,
+        "img": "https://m.media-amazon.com/images/M/MV5BZjYzZDgzMmYtYjY5Zi00YTk1LThhMDYtNjFlNzM4MTZhYzgyXkEyXkFqcGdeQXVyMTE5NDQ1MzQ3._V1_.jpg",
+        "title": "Peaky Blinders",
+        "type": "Series",
+        "rilis": 2013,
+        "genre": ["Drama", "Crime", "Historical fiction"],
+        "sinopsis": "Sinopsis Peaky Blinders menceritakan mengenai gangster yang berkuasa di Birmingham dengan latar belakang tahun 1920-an atau setelah pecahnya Perang Dunia ke 1. Nantinya, Moms akan melihat tayangan ini mengisahkan kehidupan gangster tokoh utama bernama Thomas Shelby." 
+    }
+]
