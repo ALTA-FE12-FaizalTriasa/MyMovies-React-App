@@ -2,51 +2,39 @@ import React, { Component } from 'react'
 import { Modal } from './Modal'
 
 interface Movie{
-    id:any
+    id?: number
     title:string
-    type:string
     year:number
-    sinopsis:string
+    overview:string
     img:string
-    genre:[]
+    handleDetail?: React.MouseEventHandler
 }
 
 type ModalState = {
-    isOpen: boolean
     isModal: boolean
 }
-
+const IMG_URL = "https://image.tmdb.org/t/p/w500"
 export class Card extends Component<Movie, ModalState> {
     state = {
-        isOpen: false,
         isModal: false
     }
-    showModal = () => {
-        this.setState({ isOpen: true });
-    };
-    
-    closeModal = () => {
-        this.setState({ isOpen: false });
-    };
-
-
     render() {
-        const {isOpen, isModal} = this.state 
-        const {id, title, type, year, sinopsis, genre, img} = this.props
+        const { isModal} = this.state 
+        const { title, year, overview, img, handleDetail} = this.props
     return (
-            <div id={id} className="card bg-base-100 shadow-xl w-1/4 p-0">
-                <figure className="h-4/5"><img className="h-full w-full rounded" src={img} alt="Shoes" /></figure>
+            <div className="card bg-base-100 shadow-xl w-60 p-0 mt-5 mb-5">
+                <figure className="h-80"><img className="h-full w-full rounded" src={IMG_URL + img} alt="Shoes" /></figure>
                 <div className="card-body">
-                    <h1 className="card-title text-3xl">{title}</h1>
-                    <p className="text-slate-400 text-md">{type}</p>
-                    <p className="text-slate-400 text-xl">Year : {year}</p>
-                    <Modal id="detail"
-                        handleOpen={isModal}
-                        handleClose={() => this.setState({isModal: false})}>
-                            <div className="h-96">
-                                <p className="text-slate-400 text-md">genre : {genre}</p>
-                                <p className="text-slate-600 text-md">Sinopsis : {sinopsis}</p>
-                            </div>
+                    <div className="h-28">
+                    <h1 className="card-title text-l font-bold">{title}</h1>
+                    </div>
+                    <p className="text-slate-400 text-md">{year}</p>
+                    <Modal
+                    id={0}
+                    handleOpen={isModal}
+                    handleClose={() => this.setState({ isModal:false })}
+                    >
+                        <p className="text-slate-600 text-md">Sinopsis : {overview}</p>  
                     </Modal>
                 <div className="card-actions justify-center mt-10 w-full">
                     <button className="btn w-full bg-green-400 border-0 hover:bg-green-600" onClick={() => this.setState({ isModal:true })}>See Detail!</button>

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
 interface ModalProps{
-    id: any
+    id: number
     handleOpen: boolean
     handleClose?: React.MouseEventHandler
     children?: React.ReactNode
 }
 
 export class Modal extends Component<ModalProps> {
-  render() {
+    render() {
     
     const {id, handleOpen, handleClose, children} = this.props
 
@@ -16,7 +16,7 @@ export class Modal extends Component<ModalProps> {
         <>
             {handleOpen ? (
             <div
-                id={id}
+                id={""}
                 onClick={handleClose}
             >
                 <div>{children}</div>
@@ -26,7 +26,7 @@ export class Modal extends Component<ModalProps> {
             )}
         </>
     )
-  }
+    }
 }
 
 export default Modal

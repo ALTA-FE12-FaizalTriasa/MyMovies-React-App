@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 interface FavoriteMovies{
-    id: any
     title: string
     type: string
     year: number
@@ -12,9 +11,9 @@ interface FavoriteMovies{
 
 export class FavoritesCard extends Component<FavoriteMovies> {
   render() {
-    const {id, title, type, year, genre, sinopsis, img } = this.props
+    const { title, type, year, genre, sinopsis, img } = this.props
     return (
-        <div id={id} className="card card-side bg-base-100 shadow-xl h-96 mb-10 justify-center p-0">
+        <div className="card card-side bg-base-100 shadow-xl h-96 mb-10 justify-center p-0">
         <figure className='w-5/6'><img className='h-full' src={img} alt="Movie"/></figure>
         <div className="card-body">
             <h2 className="card-title text-4xl">{title}</h2>
