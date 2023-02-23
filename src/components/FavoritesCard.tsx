@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 interface FavoriteMovies{
     title: string
-    type: string
     year: number
     genre: []
     sinopsis: string
