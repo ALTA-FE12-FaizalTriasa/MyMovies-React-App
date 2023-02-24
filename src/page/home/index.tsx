@@ -3,12 +3,14 @@ import axios from 'axios'
 import { withRouter } from '../../withRouter'
 import {Navbar} from '../../components/Navbar'
 import {Card} from '../../components/Card'
+import { useParams } from 'react-router-dom'
+import FavoritesCard from '../../components/FavoritesCard'
 
 
-interface HomeProps{
-    navigate:any
-}
+// interface HomeProps{
+// }
 interface HomeState{
+    navigate:any
     id: number
     isDark: boolean
     isOpen: boolean
@@ -16,9 +18,10 @@ interface HomeState{
     data: []
     mainData: []
     countPage: number
+    idDetail : any
 }
 
-export class Home extends Component<HomeProps, HomeState> {
+class Home extends Component<HomeState> {
     
     state = {
         id: 0,
@@ -26,7 +29,9 @@ export class Home extends Component<HomeProps, HomeState> {
         isOpen: false,
         data: [],
         maindata: [],
-        countPage: 1
+        countPage: 1,
+        isClose: false,
+        idDetail: 0
     }
 
     async getNowPlayingMovie(id:any){
@@ -54,11 +59,9 @@ export class Home extends Component<HomeProps, HomeState> {
         this.setState( {countPage: this.state.countPage - 1} ) 
         this.getNowPlayingMovie(this.state.countPage)
     }
-    handleToPageDetail(){
-        this.props.navigate('/detail')
+    handleToPageDetail(id:string){
+        this.props.navigate('/detail/' + id)
     }
-    
-
     render() {
         const {navigate} = this.props
         const {isDark,isOpen, data, maindata, countPage} = this.state
@@ -79,7 +82,6 @@ export class Home extends Component<HomeProps, HomeState> {
                                 <div className='mb-5 mt-5 mx-12'>Page : {countPage}</div>
                                 <div className="btn h-10 w-40 border-0 bg-slate-400"onClick={(this.nextPage)}>next</div>
                             </div>
-                                <button  onClick={() => this.handleToPageDetail()}></button>
                             <div className="col-span-2 border-1 w-full h-full rounded-lg shadow-md h-96 bg-white grid grid-cols-4 content-center">
                                 {
                                     data.map((item:any,index:number) => {
@@ -91,7 +93,7 @@ export class Home extends Component<HomeProps, HomeState> {
                                                 year={item.release_date}
                                                 overview={item.overview}
                                                 img={item.poster_path}
-                                                handleDetail={() => this.handleToPageDetail()}
+                                                handleDetail={() => this.handleToPageDetail(item.id)}
                                             />
                                         )
                                     })
